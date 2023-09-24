@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class RoomPlace : MonoBehaviour
 {
-    // Start is called before the first frame update
+    //public Room[] RoomPrefabs;
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         

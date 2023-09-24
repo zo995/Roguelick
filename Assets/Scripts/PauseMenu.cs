@@ -1,6 +1,7 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class PausedMenu : MonoBehaviour
+public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenu;
     [SerializeField] KeyCode keyPausedMenu;
@@ -28,18 +29,23 @@ public class PausedMenu : MonoBehaviour
         {
             pauseMenu.SetActive(true);
             Cursor.lockState = CursorLockMode.None;
-            Time.timeScale = 0f;
+            Time.timeScale = 0;
         }
         else
         {
             pauseMenu.SetActive(false);
             Cursor.lockState = CursorLockMode.Locked;
-            Time.timeScale = 1f;
+            Time.timeScale = 1;
         }
     }
 
     public void Continue()
     {
-        keyPaused = false;
+        keyPaused = !keyPaused;
+    }
+
+    public void Exit()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 }
