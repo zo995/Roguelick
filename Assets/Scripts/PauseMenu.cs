@@ -20,7 +20,7 @@ public class PauseMenu : MonoBehaviour
 
     public void AktiveMenu()
     {
-        if (Input.GetKeyUp(keyPausedMenu))
+        if (Input.GetKeyDown(keyPausedMenu))
         {
             keyPaused = !keyPaused;
         }
@@ -35,7 +35,8 @@ public class PauseMenu : MonoBehaviour
         {
             pauseMenu.SetActive(false);
             Cursor.lockState = CursorLockMode.Locked;
-            Time.timeScale = 1;
+            Time.timeScale = 1
+                ;
         }
     }
 
